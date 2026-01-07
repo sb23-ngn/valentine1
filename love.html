@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Valentine ❤️</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: white;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    p {
+      font-size: 22px;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+    .gallery {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+    .gallery img {
+      width: 180px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 24px;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>To My Valentine ❤️</h1>
+
+  <p>
+    From the moment you walked into my life, everything felt right.
+    You’re my peace, my happiness, my favorite person, My Panda🐼 
+    <br><br>
+    I don’t just love you for Valentine’s Day,
+    I love you for every single day after.
+    <br><br>
+    This song reminds me of you… Because you are PERFECT! Always 💕
+  </p>
+
+  <div class="gallery">
+    <img src="pic1.jpg">
+    <img src="pic2.jpg">
+    <img src="pic3.jpg">
+  </div>
+
+  <audio id="music" src="perfect.mp3" autoplay loop></audio>
+
+  <script>
+    if (!localStorage.getItem("playMusic")) {
+      document.getElementById("music").pause();
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+      heart.style.fontSize = (16 + Math.random() * 20) + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
